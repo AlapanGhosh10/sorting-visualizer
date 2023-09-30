@@ -33,20 +33,20 @@ public class QuickSort extends AbstractSort {
   private int partition(Bar[] arr, int lo, int hi) {
     int i = lo;
 
-    transitions.add(colorCNode(arr, PIVOT_COLOR, hi)); 
+    transitions.add(colorBar(arr, PIVOT_COLOR, hi)); 
 
     for (int j = lo; j < hi; j++) {
-      transitions.add(colorCNode(arr, SELECT_COLOR, j));
+      transitions.add(colorBar(arr, SELECT_COLOR, j));
       if (arr[j].getValue() < arr[hi].getValue()) {
         transitions.add(swap(arr, i, j));
-        transitions.add(colorCNode(arr, START_COLOR, i));
+        transitions.add(colorBar(arr, START_COLOR, i));
         i++;
       } else {
-        transitions.add(colorCNode(arr, START_COLOR, j));
+        transitions.add(colorBar(arr, START_COLOR, j));
       }
     }
     transitions.add(swap(arr, i, hi));
-    transitions.add(colorCNode(arr, START_COLOR, i));
+    transitions.add(colorBar(arr, START_COLOR, i));
 
     return i;
   }
@@ -54,7 +54,7 @@ public class QuickSort extends AbstractSort {
   @Override
   public ArrayList<Transition> startSort(Bar[] arr) {
     quickSort(arr, 0, arr.length - 1);
-    transitions.add(colorCNode(Arrays.asList(arr), SORTED_COLOR));
+    transitions.add(colorBar(Arrays.asList(arr), SORTED_COLOR));
 
     return transitions;
   }
