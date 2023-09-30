@@ -16,7 +16,7 @@ public abstract class AbstractSort {
 
   final Color START_COLOR = Color.BLUE;
   final Color SELECT_COLOR = Color.WHITE;
-  final Color SORTED_COLOR = Color.LIME;
+  final Color SORTED_COLOR = Color.CYAN;
 
   static int DX;
   static {
