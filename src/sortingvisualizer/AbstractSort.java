@@ -14,9 +14,9 @@ import javafx.util.Duration;
 
 public abstract class AbstractSort {
 
-  final Color START_COLOR = Color.CRIMSON;
-  final Color SELECT_COLOR = Color.CYAN;
-  final Color SORTED_COLOR = Color.ROYALBLUE;
+  final Color START_COLOR = Color.BLUE;
+  final Color SELECT_COLOR = Color.WHITE;
+  final Color SORTED_COLOR = Color.LIME;
 
   static int DX;
   static {
