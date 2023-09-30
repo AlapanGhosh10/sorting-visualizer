@@ -19,7 +19,7 @@ public class Bar extends Rectangle {
   public TranslateTransition moveX(int x) {
     TranslateTransition t = new TranslateTransition();
     t.setNode(this);
-    t.setDuration(Duration.millis(10));
+    t.setDuration(Duration.millis(5));
     t.setByX(x);
 
     return t; 
