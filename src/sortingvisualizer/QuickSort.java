@@ -4,17 +4,12 @@ import bar.Bar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
-import javafx.animation.FillTransition;
-import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
 import javafx.scene.paint.Color;
-import javafx.util.Duration;
 
 public class QuickSort extends AbstractSort {
 
-  private static final Color PIVOT_COLOR = Color.ALICEBLUE;
+  private static final Color PIVOT_COLOR = Color.RED;
   private ArrayList<Transition> transitions;
 
   public QuickSort() {
@@ -29,7 +24,7 @@ public class QuickSort extends AbstractSort {
     }
   }
 
-  //last elt of array chosen as pivot
+  //last elt of array chosen as pivot ****Note: change to random
   private int partition(Bar[] arr, int lo, int hi) {
     int i = lo;
 
