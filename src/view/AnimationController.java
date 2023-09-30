@@ -8,7 +8,7 @@ import sortingvisualizer.SelectionSort;
 import sortingvisualizer.BubbleSort;
 import sortingvisualizer.InsertionSort;
 import bar.Bar;
-import util.RandomCNodes;
+import util.RandomBars;
 
 import javafx.animation.SequentialTransition;
 import javafx.collections.FXCollections;
@@ -58,7 +58,7 @@ public class AnimationController extends BorderPane {
     this.randomButton = new Button("Random");
     this.choiceBox = new ChoiceBox<>();
 
-    this.cnodes = RandomCNodes.randomCNodes(NO_OF_CNODES);
+    this.cnodes = RandomBars.randomCNodes(NO_OF_CNODES);
 
     buttonRow.getChildren().add(sortButton);
     buttonRow.getChildren().add(randomButton);
@@ -103,7 +103,7 @@ public class AnimationController extends BorderPane {
       sortButton.setDisable(false);
       display.getChildren().clear();
 
-      cnodes = RandomCNodes.randomCNodes(NO_OF_CNODES);
+      cnodes = RandomBars.randomCNodes(NO_OF_CNODES);
 
       display.getChildren().addAll(Arrays.asList(cnodes));
     });

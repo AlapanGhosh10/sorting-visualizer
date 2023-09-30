@@ -7,13 +7,13 @@ import java.util.Random;
 
 import javafx.scene.paint.Color;
 
-public class RandomCNodes {
+public class RandomBars {
 
-  public RandomCNodes() {
+  public RandomBars() {
 
   }
 
-  public static Bar[] randomCNodes(int n) {
+  public static Bar[] raandomBars(int n) {
     Bar[] arr = new Bar[n];
     Random r = new Random();
 
@@ -21,13 +21,13 @@ public class RandomCNodes {
       arr[i] = new Bar(1 + r.nextInt(arr.length));
       arr[i].setX(i * (AnimationController.WINDOW_WIDTH / arr.length));
       arr[i].setFill(Color.CRIMSON);
-      setCNodeDim(arr[i], arr.length);
+      setBarDimention(arr[i], arr.length);
     }
     return arr;
  
   }
 
-  private static void setCNodeDim(Bar cnode, int n) {
+  private static void setBarDimention(Bar cnode, int n) {
     cnode.setWidth(AnimationController.WINDOW_WIDTH / n -
                     AnimationController.XGAP);
     cnode.setHeight(((AnimationController.WINDOW_HEIGHT - AnimationController.BUTTONROW_BOUNDARY) 
