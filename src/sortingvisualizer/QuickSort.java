@@ -14,7 +14,7 @@ import javafx.util.Duration;
 
 public class QuickSort extends AbstractSort {
 
-  private static final Color PIVOT_COLOR = Color.DARKMAGENTA;
+  private static final Color PIVOT_COLOR = Color.ALICEBLUE;
   private ArrayList<Transition> transitions;
 
   public QuickSort() {
