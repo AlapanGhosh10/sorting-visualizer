@@ -5,10 +5,7 @@ import bar.Bar;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import javafx.animation.FillTransition;
-import javafx.animation.ParallelTransition;
 import javafx.animation.Transition;
-import javafx.scene.paint.Color;
 
 public class BubbleSort extends AbstractSort {
 
