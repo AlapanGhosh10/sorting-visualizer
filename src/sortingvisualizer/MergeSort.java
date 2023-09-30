@@ -46,7 +46,7 @@ public class MergeSort extends AbstractSort {
       arr[k++] = tmp[j++];
     }
 
-    transitions.add(colorCNode(tmpList, SELECT_COLOR));
+    transitions.add(colorBar(tmpList, SELECT_COLOR));
 
     ParallelTransition pt = new ParallelTransition(); 
 
@@ -59,7 +59,7 @@ public class MergeSort extends AbstractSort {
     }
 
     transitions.add(pt);
-    transitions.add(colorCNode(tmpList, SELECT_COLOR));
+    transitions.add(colorBar(tmpList, SELECT_COLOR));
 
     return transitions;
   }
@@ -85,7 +85,7 @@ public class MergeSort extends AbstractSort {
 
     transitions.addAll(mergeSort(arr, 0, arr.length - 1));
 
-    transitions.add(colorCNode(Arrays.asList(arr), SORTED_COLOR));
+    transitions.add(colorBar(Arrays.asList(arr), SORTED_COLOR));
 
     return transitions;
   }
