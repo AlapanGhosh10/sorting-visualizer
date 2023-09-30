@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 
 public class SelectionSort extends AbstractSort {
 
-  private static final Color MININDX_COLOR = Color.ORANGE;
+  private static final Color MININDX_COLOR = Color.CYAN;
   private static final Color NEW_MININDX_COLOR = Color.LIGHTGREEN;
 
   private ParallelTransition colorBar(Bar[] arr, int a, int b, Color colorA, Color colorB) {

@@ -20,18 +20,16 @@ public class RandomBars {
     for (int i = 0; i < arr.length; i++) {
       arr[i] = new Bar(1 + r.nextInt(arr.length));
       arr[i].setX(i * (AnimationController.WINDOW_WIDTH / arr.length));
-      arr[i].setFill(Color.AQUA);
+      arr[i].setFill(Color.WHITE);
       setBarDimention(arr[i], arr.length);
     }
     return arr;
  
   }
 
-  private static void setBarDimention(Bar cnode, int n) {
-    cnode.setWidth(AnimationController.WINDOW_WIDTH / n -
+  private static void setBarDimention(Bar bar, int n) {
+    bar.setWidth(AnimationController.WINDOW_WIDTH / n -
                     AnimationController.XGAP);
-    cnode.setHeight(((AnimationController.WINDOW_HEIGHT - AnimationController.BUTTONROW_BOUNDARY) 
-                      / n) *
-                      cnode.getValue());
+    bar.setHeight(((AnimationController.WINDOW_HEIGHT - AnimationController.BUTTONROW_BOUNDARY) / n) * bar.getValue());
   }
 }
