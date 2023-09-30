@@ -20,7 +20,7 @@ public class RandomBars {
     for (int i = 0; i < arr.length; i++) {
       arr[i] = new Bar(1 + r.nextInt(arr.length));
       arr[i].setX(i * (AnimationController.WINDOW_WIDTH / arr.length));
-      arr[i].setFill(Color.CRIMSON);
+      arr[i].setFill(Color.AQUA);
       setBarDimention(arr[i], arr.length);
     }
     return arr;
