@@ -13,7 +13,7 @@ public class RandomBars {
 
   }
 
-  public static Bar[] raandomBars(int n) {
+  public static Bar[] randomBars(int n) {
     Bar[] arr = new Bar[n];
     Random r = new Random();
 

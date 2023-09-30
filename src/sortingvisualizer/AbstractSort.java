@@ -20,10 +20,10 @@ public abstract class AbstractSort {
 
   static int DX;
   static {
-    DX = AnimationController.WINDOW_WIDTH / AnimationController.NO_OF_CNODES;
+    DX = AnimationController.WINDOW_WIDTH / AnimationController.NO_OF_BARS;
   }
 
-  ParallelTransition colorCNode(Bar[] arr, Color color, int...a) {
+  ParallelTransition colorBar(Bar[] arr, Color color, int...a) {
     ParallelTransition pt = new ParallelTransition();
     
     for (int i = 0; i < a.length; i++) {
@@ -36,7 +36,7 @@ public abstract class AbstractSort {
     return pt;
   }
 
-  ParallelTransition colorCNode(List<Bar> list, Color color) {
+  ParallelTransition colorBar(List<Bar> list, Color color) {
     ParallelTransition pt = new ParallelTransition();
     
     for (Bar c : list) {

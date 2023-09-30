@@ -25,7 +25,6 @@ import javafx.util.StringConverter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 public class AnimationController extends BorderPane {
 
@@ -34,7 +33,7 @@ public class AnimationController extends BorderPane {
   public static final int XGAP = 10;
   public static final int BUTTONROW_BOUNDARY = 100;
 
-  public static int NO_OF_CNODES = 40;
+  public static int NO_OF_BARS = 40;
 
   private static AbstractSort abstractSort;
 
@@ -45,7 +44,7 @@ public class AnimationController extends BorderPane {
   private Button randomButton;
   private ChoiceBox<AbstractSort> choiceBox;
 
-  private Node[] cnodes;
+  private Bar[] bars;
 
   public AnimationController() {
     this.display = new Pane();
@@ -58,7 +57,7 @@ public class AnimationController extends BorderPane {
     this.randomButton = new Button("Random");
     this.choiceBox = new ChoiceBox<>();
 
-    this.cnodes = RandomBars.randomCNodes(NO_OF_CNODES);
+    this.bars = RandomBars.randomBars(NO_OF_BARS);
 
     buttonRow.getChildren().add(sortButton);
     buttonRow.getChildren().add(randomButton);
@@ -79,7 +78,7 @@ public class AnimationController extends BorderPane {
     abstractSortList.add(new QuickSort());
     abstractSortList.add(new HeapSort());
 
-    display.getChildren().addAll(Arrays.asList(cnodes));
+    display.getChildren().addAll(Arrays.asList(bars));
 
     sortButton.setOnAction(event -> {
       sortButton.setDisable(true);
@@ -89,7 +88,7 @@ public class AnimationController extends BorderPane {
 
       SequentialTransition sq = new SequentialTransition();
 
-      sq.getChildren().addAll(abstractSort.startSort(cnodes));
+      sq.getChildren().addAll(abstractSort.startSort(bars));
 
       sq.setOnFinished(e -> {
         randomButton.setDisable(false);
@@ -103,9 +102,9 @@ public class AnimationController extends BorderPane {
       sortButton.setDisable(false);
       display.getChildren().clear();
 
-      cnodes = RandomBars.randomCNodes(NO_OF_CNODES);
+      bars = RandomBars.randomBars(NO_OF_BARS);
 
-      display.getChildren().addAll(Arrays.asList(cnodes));
+      display.getChildren().addAll(Arrays.asList(bars));
     });
 
     choiceBox.setItems(FXCollections.observableArrayList(
