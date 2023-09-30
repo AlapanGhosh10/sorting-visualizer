@@ -29,7 +29,7 @@ public class InsertionSort extends AbstractSort {
 
       ParallelTransition pt = new ParallelTransition();
 
-      transitions.add(colorCNode(arr, SELECT_COLOR, i));
+      transitions.add(colorBar(arr, SELECT_COLOR, i));
 
       while(j >= 0 && arr[j].getValue() > key.getValue()) {
         pt.getChildren().add(arr[j].moveX(DX));
@@ -41,11 +41,11 @@ public class InsertionSort extends AbstractSort {
 
       pt.getChildren().add(key.moveX(DX * (j + 1 - i)));
       transitions.add(pt);
-      transitions.add(colorCNode(arr, START_COLOR, j + 1));
+      transitions.add(colorBar(arr, START_COLOR, j + 1));
 
     }
 
-    transitions.add(colorCNode(Arrays.asList(arr), SORTED_COLOR));
+    transitions.add(colorBar(Arrays.asList(arr), SORTED_COLOR));
 
     return transitions;
 
