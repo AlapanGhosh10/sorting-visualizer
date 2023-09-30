@@ -43,20 +43,20 @@ public class HeapSort extends AbstractSort {
 
   private void heapSort(Bar[] arr) {
     //build initial max heap
-    transitions.add(colorCNode(selectSubTree(arr, arr.length), SELECT_COLOR));
+    transitions.add(colorBar(selectSubTree(arr, arr.length), SELECT_COLOR));
     for (int i = arr.length / 2 - 1; i >= 0; i--) {
       heapify(arr, i, arr.length);
     }
-    transitions.add(colorCNode(selectSubTree(arr, arr.length), START_COLOR));
+    transitions.add(colorBar(selectSubTree(arr, arr.length), START_COLOR));
 
     //swap root node with final elt, heapify subarray
     for (int i = arr.length - 1; i > 0; i--) {
-      transitions.add(colorCNode(arr, ROOT_COLOR, 0));
+      transitions.add(colorBar(arr, ROOT_COLOR, 0));
       transitions.add(swap(arr, 0, i));
-      transitions.add(colorCNode(arr, START_COLOR, i));
-      transitions.add(colorCNode(selectSubTree(arr, i), SELECT_COLOR));
+      transitions.add(colorBar(arr, START_COLOR, i));
+      transitions.add(colorBar(selectSubTree(arr, i), SELECT_COLOR));
       heapify(arr, 0, i);
-      transitions.add(colorCNode(selectSubTree(arr, i), START_COLOR));
+      transitions.add(colorBar(selectSubTree(arr, i), START_COLOR));
     }
   }
 
@@ -74,7 +74,7 @@ public class HeapSort extends AbstractSort {
   public ArrayList<Transition> startSort(Bar[] arr) {
     heapSort(arr);
 
-    transitions.add(colorCNode(Arrays.asList(arr), Color.ROYALBLUE));
+    transitions.add(colorBar(Arrays.asList(arr), Color.ROYALBLUE));
     return transitions;
   }
 }
