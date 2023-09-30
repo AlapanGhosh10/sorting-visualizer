@@ -19,17 +19,17 @@ public class BubbleSort extends AbstractSort {
     this.transitions = new ArrayList<>();
   }
 
-  private ArrayList<Transition> compareCNode(Bar[] arr, int a, int b) {
+  private ArrayList<Transition> compareBar(Bar[] arr, int a, int b) {
     ArrayList<Transition> transitions = new ArrayList<>();
 
-    transitions.add(colorCNode(arr, SELECT_COLOR, a, b));
+    transitions.add(colorBar(arr, SELECT_COLOR, a, b));
 
     if (arr[a].getValue() > arr[b].getValue()) {
       transitions.add(swap(arr, a, b));
       swapped = true;
     } 
 
-    transitions.add(colorCNode(arr, START_COLOR, a, b));
+    transitions.add(colorBar(arr, START_COLOR, a, b));
 
     return transitions;
   }
@@ -38,7 +38,7 @@ public class BubbleSort extends AbstractSort {
     for (int i = 0; i < arr.length; i++) {
       swapped = false;
       for (int j = 0; j < arr.length - 1 - i; j++) {
-        this.transitions.addAll(compareCNode(arr, j, j + 1));
+        this.transitions.addAll(compareBar(arr, j, j + 1));
       }
 
       if (!swapped) {
@@ -52,7 +52,7 @@ public class BubbleSort extends AbstractSort {
   public ArrayList<Transition> startSort(Bar[] arr) {
     bubbleSort(arr);
 
-    this.transitions.add(colorCNode(Arrays.asList(arr), SORTED_COLOR));
+    this.transitions.add(colorBar(Arrays.asList(arr), SORTED_COLOR));
 
     return this.transitions;
 
