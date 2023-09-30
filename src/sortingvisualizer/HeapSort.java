@@ -14,7 +14,7 @@ import javafx.util.Duration;
 
 public class HeapSort extends AbstractSort {
   
-  private static final Color ROOT_COLOR = Color.GOLD;
+  private static final Color ROOT_COLOR = Color.YELLOW;
   private ArrayList<Transition> transitions;
 
   public HeapSort() {
@@ -53,7 +53,7 @@ public class HeapSort extends AbstractSort {
     for (int i = arr.length - 1; i > 0; i--) {
       transitions.add(colorBar(arr, ROOT_COLOR, 0));
       transitions.add(swap(arr, 0, i));
-      transitions.add(colorBar(arr, START_COLOR, i));
+      transitions.add(colorBar(arr, SORTED_COLOR, i));
       transitions.add(colorBar(selectSubTree(arr, i), SELECT_COLOR));
       heapify(arr, 0, i);
       transitions.add(colorBar(selectSubTree(arr, i), START_COLOR));
