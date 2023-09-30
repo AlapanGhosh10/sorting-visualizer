@@ -1,4 +1,4 @@
-import cnode.CNode;
+import bar.Bar;
 import view.AnimationController;
 
 import javafx.application.Application;

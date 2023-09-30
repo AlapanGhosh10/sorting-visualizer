@@ -1,6 +1,6 @@
 package sortingvisualizer;
 
-import cnode.CNode;
+import bar.Bar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +21,7 @@ public class HeapSort extends AbstractSort {
     this.transitions = new ArrayList<>();
   }
 
-  private void heapify(CNode[] arr, int i, int n) {
+  private void heapify(Bar[] arr, int i, int n) {
     int left = 2 * i + 1;
     int right = 2 * i + 2;
     int max = i;
@@ -41,7 +41,7 @@ public class HeapSort extends AbstractSort {
 
   }
 
-  private void heapSort(CNode[] arr) {
+  private void heapSort(Bar[] arr) {
     //build initial max heap
     transitions.add(colorCNode(selectSubTree(arr, arr.length), SELECT_COLOR));
     for (int i = arr.length / 2 - 1; i >= 0; i--) {
@@ -60,8 +60,8 @@ public class HeapSort extends AbstractSort {
     }
   }
 
-  private ArrayList<CNode> selectSubTree(CNode[] arr, int n) {
-    ArrayList<CNode> list = new ArrayList<>();
+  private ArrayList<Bar> selectSubTree(Bar[] arr, int n) {
+    ArrayList<Bar> list = new ArrayList<>();
 
     for (int i = 0; i < n; i++) {
       list.add(arr[i]);
@@ -71,7 +71,7 @@ public class HeapSort extends AbstractSort {
   }
 
   @Override
-  public ArrayList<Transition> startSort(CNode[] arr) {
+  public ArrayList<Transition> startSort(Bar[] arr) {
     heapSort(arr);
 
     transitions.add(colorCNode(Arrays.asList(arr), Color.ROYALBLUE));

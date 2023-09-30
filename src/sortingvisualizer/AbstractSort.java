@@ -1,6 +1,6 @@
 package sortingvisualizer;
 
-import cnode.CNode;
+import bar.Bar;
 import view.AnimationController;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public abstract class AbstractSort {
     DX = AnimationController.WINDOW_WIDTH / AnimationController.NO_OF_CNODES;
   }
 
-  ParallelTransition colorCNode(CNode[] arr, Color color, int...a) {
+  ParallelTransition colorCNode(Bar[] arr, Color color, int...a) {
     ParallelTransition pt = new ParallelTransition();
     
     for (int i = 0; i < a.length; i++) {
@@ -36,10 +36,10 @@ public abstract class AbstractSort {
     return pt;
   }
 
-  ParallelTransition colorCNode(List<CNode> list, Color color) {
+  ParallelTransition colorCNode(List<Bar> list, Color color) {
     ParallelTransition pt = new ParallelTransition();
     
-    for (CNode c : list) {
+    for (Bar c : list) {
       FillTransition ft = new FillTransition();
       ft.setShape(c);
       ft.setToValue(color);
@@ -50,19 +50,19 @@ public abstract class AbstractSort {
     return pt;
   }
 
-  ParallelTransition swap(CNode[] arr, int i, int j) {
+  ParallelTransition swap(Bar[] arr, int i, int j) {
     ParallelTransition pt = new ParallelTransition();
 
     int dxFactor = j - i;
 
     pt.getChildren().addAll(arr[i].moveX(DX * dxFactor), arr[j].moveX(-DX * dxFactor));
 
-    CNode tmp = arr[i];
+    Bar tmp = arr[i];
     arr[i] = arr[j];
     arr[j] = tmp;
 
     return pt;
   }
 
-  public abstract ArrayList<Transition> startSort(CNode[] arr);
+  public abstract ArrayList<Transition> startSort(Bar[] arr);
 }

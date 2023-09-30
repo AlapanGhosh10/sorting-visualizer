@@ -1,6 +1,6 @@
 package sortingvisualizer;
 
-import cnode.CNode;
+import bar.Bar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +15,7 @@ public class SelectionSort extends AbstractSort {
   private static final Color MININDX_COLOR = Color.ORANGE;
   private static final Color NEW_MININDX_COLOR = Color.LIGHTGREEN;
 
-  private ParallelTransition colorCNode(CNode[] arr, int a, int b, Color colorA, Color colorB) {
+  private ParallelTransition colorCNode(Bar[] arr, int a, int b, Color colorA, Color colorB) {
     ParallelTransition pt = new ParallelTransition();
 
     pt.getChildren().addAll(colorCNode(arr, colorA, a), colorCNode(arr, colorB, b));
@@ -24,7 +24,7 @@ public class SelectionSort extends AbstractSort {
   }
 
   @Override
-  public ArrayList<Transition> startSort(CNode[] arr) {
+  public ArrayList<Transition> startSort(Bar[] arr) {
     ArrayList<Transition> transitions = new ArrayList<>();
     int minIndx;
 

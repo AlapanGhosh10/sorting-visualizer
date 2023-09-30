@@ -1,6 +1,6 @@
 package sortingvisualizer;
 
-import cnode.CNode;
+import bar.Bar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,7 +19,7 @@ public class BubbleSort extends AbstractSort {
     this.transitions = new ArrayList<>();
   }
 
-  private ArrayList<Transition> compareCNode(CNode[] arr, int a, int b) {
+  private ArrayList<Transition> compareCNode(Bar[] arr, int a, int b) {
     ArrayList<Transition> transitions = new ArrayList<>();
 
     transitions.add(colorCNode(arr, SELECT_COLOR, a, b));
@@ -34,7 +34,7 @@ public class BubbleSort extends AbstractSort {
     return transitions;
   }
 
-  private void bubbleSort(CNode[] arr) {
+  private void bubbleSort(Bar[] arr) {
     for (int i = 0; i < arr.length; i++) {
       swapped = false;
       for (int j = 0; j < arr.length - 1 - i; j++) {
@@ -49,7 +49,7 @@ public class BubbleSort extends AbstractSort {
   }
 
   @Override
-  public ArrayList<Transition> startSort(CNode[] arr) {
+  public ArrayList<Transition> startSort(Bar[] arr) {
     bubbleSort(arr);
 
     this.transitions.add(colorCNode(Arrays.asList(arr), SORTED_COLOR));

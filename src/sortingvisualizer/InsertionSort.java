@@ -1,6 +1,6 @@
 package sortingvisualizer;
 
-import cnode.CNode;
+import bar.Bar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,11 +20,11 @@ public class InsertionSort extends AbstractSort {
   }
 
   @Override
-  public ArrayList<Transition> startSort(CNode[] arr) {
+  public ArrayList<Transition> startSort(Bar[] arr) {
 
     for (int i = 1; i < arr.length; i++) {
       int j = i - 1;
-      CNode key = arr[i];
+      Bar key = arr[i];
       int keyIndx = i;
 
       ParallelTransition pt = new ParallelTransition();

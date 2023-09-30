@@ -7,7 +7,7 @@ import sortingvisualizer.QuickSort;
 import sortingvisualizer.SelectionSort;
 import sortingvisualizer.BubbleSort;
 import sortingvisualizer.InsertionSort;
-import cnode.CNode;
+import bar.Bar;
 import util.RandomCNodes;
 
 import javafx.animation.SequentialTransition;
@@ -45,7 +45,7 @@ public class AnimationController extends BorderPane {
   private Button randomButton;
   private ChoiceBox<AbstractSort> choiceBox;
 
-  private CNode[] cnodes;
+  private Node[] cnodes;
 
   public AnimationController() {
     this.display = new Pane();

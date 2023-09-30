@@ -1,6 +1,6 @@
 package sortingvisualizer;
 
-import cnode.CNode;
+import bar.Bar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +21,7 @@ public class QuickSort extends AbstractSort {
     this.transitions = new ArrayList<>();
   }
 
-  private void quickSort(CNode[] arr, int lo, int hi) {
+  private void quickSort(Bar[] arr, int lo, int hi) {
     if (lo < hi) {
       int q = partition(arr, lo, hi);
       quickSort(arr, lo, q - 1);
@@ -30,7 +30,7 @@ public class QuickSort extends AbstractSort {
   }
 
   //last elt of array chosen as pivot
-  private int partition(CNode[] arr, int lo, int hi) {
+  private int partition(Bar[] arr, int lo, int hi) {
     int i = lo;
 
     transitions.add(colorCNode(arr, PIVOT_COLOR, hi)); 
@@ -52,7 +52,7 @@ public class QuickSort extends AbstractSort {
   }
 
   @Override
-  public ArrayList<Transition> startSort(CNode[] arr) {
+  public ArrayList<Transition> startSort(Bar[] arr) {
     quickSort(arr, 0, arr.length - 1);
     transitions.add(colorCNode(Arrays.asList(arr), SORTED_COLOR));
 

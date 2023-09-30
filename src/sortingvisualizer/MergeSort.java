@@ -1,6 +1,6 @@
 package sortingvisualizer;
 
-import cnode.CNode;
+import bar.Bar;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,12 +14,12 @@ import javafx.util.Duration;
 
 public class MergeSort extends AbstractSort {
 
-  private CNode[] tmp;
+  private Bar[] tmp;
 
-  private ArrayList<Transition> merge(CNode[] arr, int p, int q, int r) {
+  private ArrayList<Transition> merge(Bar[] arr, int p, int q, int r) {
     ArrayList<Transition> transitions = new ArrayList<>();
 
-    List<CNode> tmpList = new ArrayList<>();
+    List<Bar> tmpList = new ArrayList<>();
 
     for (int i = p; i <= r; i++) {
       tmp[i] = arr[i];
@@ -64,7 +64,7 @@ public class MergeSort extends AbstractSort {
     return transitions;
   }
 
-  private ArrayList<Transition> mergeSort(CNode[] arr, int p, int r) {
+  private ArrayList<Transition> mergeSort(Bar[] arr, int p, int r) {
     ArrayList<Transition> transitions = new ArrayList<>();
 
     if (p < r) {
@@ -78,10 +78,10 @@ public class MergeSort extends AbstractSort {
   }
 
   @Override
-  public ArrayList<Transition> startSort(CNode[] arr) {
+  public ArrayList<Transition> startSort(Bar[] arr) {
     ArrayList<Transition> transitions = new ArrayList<>();
 
-    this.tmp = new CNode[arr.length];
+    this.tmp = new Bar[arr.length];
 
     transitions.addAll(mergeSort(arr, 0, arr.length - 1));
 

@@ -1,19 +1,19 @@
-package cnode;
+package bar;
 
 import javafx.animation.TranslateTransition;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-public class CNode extends Rectangle {
+public class Bar extends Rectangle {
 
-  private int value;
+  private int val;
 
-  public CNode(int n) {
-    this.value = n;
+  public Bar(int n) {
+    this.val = n;
   }
 
   public int getValue() {
-    return this.value;
+    return this.val;
   }
 
   public TranslateTransition moveX(int x) {
